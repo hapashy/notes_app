@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/views/widgets/add_note_bottom_sheet.dart';
 import 'package:notes_app/views/widgets/notes_vies_body.dart';
 
 class NotesView extends StatelessWidget {
@@ -11,6 +12,8 @@ class NotesView extends StatelessWidget {
         backgroundColor: Colors.blue,
         onPressed: () {
           showModalBottomSheet(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16)),
               context: context,
               builder: (context) {
                 return const AddNoteBottomSheet();
@@ -25,4 +28,3 @@ class NotesView extends StatelessWidget {
     );
   }
 }
-
