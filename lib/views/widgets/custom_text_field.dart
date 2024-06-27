@@ -13,7 +13,7 @@ class CustomTextField extends StatelessWidget {
       cursorColor: kPrimaryColor,
       maxLines: maxLines,
       decoration: InputDecoration(
-        
+          
         hintText: hint,
         border: buildBorder(),
         enabledBorder: buildBorder(),
