@@ -21,26 +21,42 @@ class _AddNoteFormState extends State<AddNoteForm> {
     return Form(
       key: formKey,
       autovalidateMode: autovalidateMode,
-      child: const Column(
+      child: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 32,
           ),
           CustomTextField(
+            onSaved: (value) {
+              title = value;
+            },
             hint: 'Title',
           ),
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
           CustomTextField(
+            onSaved: (value) {
+              subTitle = value;
+            },
             hint: 'Content',
             maxLines: 5,
           ),
-          SizedBox(
+          const SizedBox(
             height: 50,
           ),
-          CustomButton(),
-          SizedBox(
+          CustomButton(
+            onTap: () {
+              if (formKey.currentState!.validate()) {
+                formKey.currentState!.save();
+              } else {
+                autovalidateMode = AutovalidateMode.always;
+                setState(() {});
+              }
+              ;
+            },
+          ),
+          const SizedBox(
             height: 16,
           ),
         ],
